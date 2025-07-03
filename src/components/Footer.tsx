@@ -1,4 +1,3 @@
-
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white py-12 px-4">
@@ -6,9 +5,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full text-white text-lg font-bold mr-3">
-                SL
-              </div>
+              <img 
+                src="/lovable-uploads/5371994a-ea13-4b33-a94e-dd79a9caec70.png" 
+                alt="Safe Lock Logo"
+                className="w-12 h-12 mr-3"
+              />
               <h3 className="text-2xl font-bold">Safe Lock</h3>
             </div>
             <p className="text-slate-300 leading-relaxed">

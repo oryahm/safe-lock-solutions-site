@@ -11,9 +11,11 @@ const Hero = () => {
     <section className="bg-gradient-to-b from-slate-50 to-white py-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-900 rounded-full text-white text-3xl font-bold mb-6">
-            SL
-          </div>
+          <img 
+            src="/lovable-uploads/5371994a-ea13-4b33-a94e-dd79a9caec70.png" 
+            alt="Safe Lock Logo"
+            className="w-32 h-32 mx-auto mb-6"
+          />
         </div>
         
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
