@@ -8,8 +8,10 @@ import { toast } from "sonner";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
+    business: '',
     phone: '',
     email: '',
+    city: '',
     message: ''
   });
 
@@ -17,7 +19,7 @@ const ContactForm = () => {
     e.preventDefault();
     
     // Basic validation
-    if (!formData.name || !formData.phone) {
+    if (!formData.name || !formData.phone || !formData.city) {
       toast.error("אנא מלאו את השדות החובה");
       return;
     }
@@ -29,8 +31,10 @@ const ContactForm = () => {
     // Reset form
     setFormData({
       name: '',
+      business: '',
       phone: '',
       email: '',
+      city: '',
       message: ''
     });
   };
@@ -47,10 +51,10 @@ const ContactForm = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            קבלו הצעת מחיר מותאמת אישית
+            מעוניינים בפרטים נוספים או בהצעה שלא תוכלו לסרב לה?
           </h2>
           <p className="text-xl text-slate-600">
-            השאירו פרטים ונחזור אליכם תוך 24 שעות עם הצעה מדויקת
+            השאירו פרטים בטופס ונחזור אליכם עם ייעוץ חינם והצעה משתלמת
           </p>
         </div>
         
@@ -59,7 +63,7 @@ const ContactForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                  שם מלא *
+                  שם פרטי *
                 </label>
                 <Input
                   type="text"
@@ -69,10 +73,27 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="הכניסו את שמכם המלא"
+                  placeholder="הכניסו את שמכם"
                 />
               </div>
               
+              <div>
+                <label htmlFor="business" className="block text-sm font-medium text-slate-700 mb-2">
+                  שם העסק
+                </label>
+                <Input
+                  type="text"
+                  id="business"
+                  name="business"
+                  value={formData.business}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="שם החברה או העסק (אופציונלי)"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
                   טלפון *
@@ -86,6 +107,22 @@ const ContactForm = () => {
                   required
                   className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="050-1234567"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="city" className="block text-sm font-medium text-slate-700 mb-2">
+                  עיר *
+                </label>
+                <Input
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="איזו עיר?"
                 />
               </div>
             </div>
@@ -124,7 +161,7 @@ const ContactForm = () => {
               type="submit"
               className="w-full bg-blue-900 hover:bg-blue-800 text-white py-4 px-8 text-lg font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              אני רוצה הצעת מחיר
+              שלח בקשה
             </Button>
           </form>
           
@@ -136,6 +173,9 @@ const ContactForm = () => {
               </a>
               <a href="mailto:info@safelock.co.il" className="text-blue-900 font-semibold hover:underline">
                 ✉️ info@safelock.co.il
+              </a>
+              <a href="https://wa.me/972501234567" className="text-blue-900 font-semibold hover:underline">
+                💬 WhatsApp
               </a>
             </div>
           </div>

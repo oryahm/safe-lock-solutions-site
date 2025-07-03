@@ -1,8 +1,9 @@
+
 const Footer = () => {
   return (
     <footer className="bg-slate-900 text-white py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
               <img 
@@ -26,6 +27,7 @@ const Footer = () => {
               <li>• התקנה מקצועית</li>
               <li>• שירות פריצה</li>
               <li>• תחזוקה ותיקונים</li>
+              <li>• השכרת כספות</li>
             </ul>
           </div>
           
@@ -45,8 +47,31 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center">
+                <span className="mr-2">💬</span>
+                <a href="https://wa.me/972501234567" className="hover:text-white transition-colors">
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-4">כתובת ושעות פעילות</h4>
+            <div className="space-y-3 text-slate-300">
+              <div className="flex items-start">
                 <span className="mr-2">📍</span>
-                <span>שירות ארצי</span>
+                <div>
+                  <p>בן־גוריון 190</p>
+                  <p>גבעתיים</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="mr-2">🕒</span>
+                <div>
+                  <p>א׳-ה׳: 08:00-18:00</p>
+                  <p>ו׳: 08:00-14:00</p>
+                  <p>חירום: 24/7</p>
+                </div>
               </div>
             </div>
           </div>
